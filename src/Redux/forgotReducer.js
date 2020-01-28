@@ -36,7 +36,6 @@ export const forgotReducer = (state = forgotInitialState, action) => {
                 success: false,
             }
         }
-
         default: {
             return state;
         }
@@ -63,9 +62,8 @@ export const forgot = (email) => async (dispatch) => {
             dispatch(forgotError(data.error));
         } else {
             dispatch(forgotSuccess(true));
-
         }
     } catch (e) {
-        dispatch(forgotError(e.message));
+        dispatch(forgotError(e.response.data.error));
     }
 };
