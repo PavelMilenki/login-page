@@ -54,6 +54,7 @@ export const forgotSuccess = (success) => ({
     type: FORGOT_SUCCESS,
     success,
 });
+
 export const forgot = (email) => async (dispatch) => {
     dispatch(forgotLoading(true));
     try {
